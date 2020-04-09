@@ -1,0 +1,13 @@
+.idea/
+
+# dependencies
+/api/node_modules
+/api/.pnp
+/api/.pnp.js
+/client/node_modules
+
+# testing
+/api/coverage
+
+# production
+/api/build
