@@ -32,6 +32,12 @@ class Home extends React.Component {
     this.props.history.push(`/${movieId}`)
   };
 
+  onSearchRowClick = (row) => {
+    const { searchMovies } = this.state;
+    const movieId = searchMovies[row.index].id;
+    this.props.history.push(`/${movieId}`)
+  };
+
   searchMovie = () => {
     const { searchText } = this.state;
     fetch(`http://localhost:9000/search/${searchText}`)
@@ -78,7 +84,7 @@ class Home extends React.Component {
     return (
       <div style={styles.outline}>
         <label style={styles.sectionHeader}><b>Search Movies</b></label>
-        <form className="form" id="searchForm">
+        <div style={styles.searchOutline}>
           <input
             type="text"
             className="input"
@@ -89,8 +95,8 @@ class Home extends React.Component {
           <button className="button is-info" onClick={this.searchMovie}>
             Search
           </button>
-        </form>
-        {searchMovies.length > 0 && <Table columns={columns} data={searchDataInput} onRowClick={this.onRowClick}  />}
+        </div>
+        {searchMovies.length > 0 && <Table columns={columns} data={searchDataInput} onRowClick={this.onSearchRowClick}  />}
         <label style={styles.sectionHeader}><b>Popular Movies</b></label>
         <Table columns={columns} data={dataInput} onRowClick={this.onRowClick}  />
       </div>
@@ -112,6 +118,10 @@ const styles = {
     display: 'inline-block',
     fontSize: 24,
   },
+  searchOutline: {
+    flexDirection: 'row',
+    marginBottom: 16,
+  }
 };
 
 export default withRouter(Home)

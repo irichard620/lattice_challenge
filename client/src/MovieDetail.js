@@ -49,8 +49,10 @@ class MovieDetail extends React.Component {
       });
   }
 
-  onCastRowClick = (cast) => {
-
+  onCastRowClick = (row) => {
+    const { cast } = this.state;
+    const castId = cast[row.index].id;
+    this.props.history.push(`/cast/${castId}`)
   };
 
   onRelatedMovieClick = (row) => {
@@ -107,7 +109,7 @@ class MovieDetail extends React.Component {
         <label><b>Overview: </b>{details.overview}</label>
         <label><b>Release date: </b>{details.release_date}</label>
         <label style={styles.sectionHeader}><b>Cast</b></label>
-        <Table columns={castColumns} data={castData} onRowClick={this.onRowClick}  />
+        <Table columns={castColumns} data={castData} onRowClick={this.onCastRowClick}  />
         <label style={styles.sectionHeader}><b>Related Movies</b></label>
         <Table columns={relatedColumns} data={relatedData} onRowClick={this.onRelatedMovieClick}  />
       </div>

@@ -53,4 +53,9 @@ const styles = {
     color: 'black',
     fontWeight: 'bold',
   },
+  row: {
+    '&:hover': {
+      backgroundColor: '#999',
+    },
+  }
 };

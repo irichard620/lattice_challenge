@@ -4,10 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
+require('dotenv').config()
 
 var indexRouter = require('./routes/index');
 var moviesRouter = require("./routes/movies");
 var searchRouter = require("./routes/search");
+var actorRouter = require("./routes/actors");
 
 var app = express();
 
@@ -25,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/search', searchRouter);
 app.use("/movies", moviesRouter);
+app.use("/cast", actorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

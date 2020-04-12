@@ -4,10 +4,10 @@ const fetch = require('cross-fetch');
 
 const {BASE_API_URL} = require("../config");
 
-router.get("/:query", function(req, res, next) {
-  fetch(`${BASE_API_URL}/search/movie?api_key=${process.env.API_KEY}&query=${req.params.query}`)
-    .then(movies => movies.json())
-    .then(movies => res.json(movies))
+router.get("/:id", function(req, res, next) {
+  fetch(`${BASE_API_URL}/person/${req.params.id}?api_key=${process.env.API_KEY}`)
+    .then(person => person.json())
+    .then(person => res.json(person))
     .catch(e => res.status(500).send('Could not access TMDB server'))
 });
 

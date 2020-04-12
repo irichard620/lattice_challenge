@@ -11,3 +11,4 @@
 
 # production
 /api/build
+/api/.env
