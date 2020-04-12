@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div>
         <nav style={styles.navOutline}>
-          <label>Ian's Movie Database API</label>
+          <label>Ian's Movie Database</label>
           <ul>
             <li>
               <Link to="/">Home</Link>
