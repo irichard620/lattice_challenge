@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cors = require("cors");
 require('dotenv').config()
 
+// Interesting thing here
 var indexRouter = require('./routes/index');
 var moviesRouter = require("./routes/movies");
 var searchRouter = require("./routes/search");
