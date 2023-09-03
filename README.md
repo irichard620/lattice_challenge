@@ -1,4 +1,4 @@
-**Latticed take home challenge - Ian Richard**
+**Lattieeeced take home challenge - Ian Richard**
 
 To run this project, follow these steps:
 1) Create an .env file in api directory that contains the key 'API_KEY' and the value of your TMDB API key
